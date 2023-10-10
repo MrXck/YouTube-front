@@ -1,0 +1,1 @@
+export const BASEURL = 'http://127.0.0.1:8000'// export const BASEURL = `http://${BASE_IP}:${BASE_PORT}`export const LoginURL = '/auth/oauth/token?client_id=youtubeApp&client_secret=youtubeApp&grant_type=password&username='export const RefreshTokenURL = '/auth/oauth/token?client_id=youtubeApp&client_secret=youtubeApp&grant_type=refresh_token&refresh_token='
