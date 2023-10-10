@@ -1,27 +1,41 @@
 <template>
   <div class="left-nav-parent">
     <div class="left-nav">
-      <div class="nav-item" v-for="(item, index) in navItems" :key="index"
+      <div class="nav-item" v-for="(item, index) in navItems" :key="index" @click="switchUrl(item.to, index)"
            :class="navIndex === index ? 'nav-item-active nav-item' : 'nav-item'">
         <div class="nav-item-icon">
           24
         </div>
         <div class="nav-item-desc">
-          {{ item }}
+          {{ item.name }}
         </div>
       </div>
-      <hr/>
-
+<!--      <hr/>-->
     </div>
   </div>
 </template>
 
 <script setup>
-
 import {reactive, ref} from "vue";
+import {to} from "@/utils/routerUtils";
 
 const navIndex = ref(0)
-const navItems = reactive(['首页', 'Shorts', '订阅内容', 'Shorts', '订阅内容', 'Shorts', '订阅内容', 'Shorts', '订阅内容', 'Shorts', '订阅内容'])
+const navItems = reactive([
+  {
+    name: '首页',
+    to: 'home'
+  },
+  {
+    name: '订阅内容',
+    to: 'subscriptions'
+  }
+])
+
+
+function switchUrl(toName, index) {
+  to({name: toName})
+  navIndex.value = index
+}
 
 
 </script>

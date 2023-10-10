@@ -2,7 +2,7 @@
   <Header/>
   <div class="index-container">
     <LeftNav/>
-    <MainContainer/>
+    <router-view/>
   </div>
 </template>
 

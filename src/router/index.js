@@ -8,7 +8,24 @@ const routes = [
       title: '首页'
     },
     component: () => import('../views/Index'),
-    children: []
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: () => import('../views/home-page/Home.vue'),
+        meta: {
+          title: '首页'
+        }
+      },
+      {
+        path: 'subscriptions',
+        name: 'subscriptions',
+        component: () => import('../views/subscriptions-page/Subscriptions.vue'),
+        meta: {
+          title: '首页'
+        }
+      },
+    ]
   },
   {
     path: '/login',
